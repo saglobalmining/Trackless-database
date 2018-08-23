@@ -1,0 +1,98 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>Index form</title>
+
+<meta name="generator" content="RoboHelp by eHelp Corporation   www.ehelp.com">
+<meta name="description" content="WebHelp 5.50">
+<style>
+<!--
+body {margin:0;}
+-->
+</style></head>
+
+<body bgcolor="White">
+<script language="javascript" src="../../../../whver.js"></script>
+<script language="javascript1.2" src="../../../../whmsg.js"></script>
+<script language="javascript1.2" src="../../../whproxy.js"></script>
+<script language="javascript1.2" src="../../../../whutils.js"></script>
+<script language="javascript1.2" src="whiform_data/whform.js"></script>
+<script language="javascript1.2">
+<!--
+function indexLookup(bCR)
+{
+	var strInput = document.IndexInputForm.keywordField.value.toUpperCase();
+	if (strInput != "") {
+		var oParam = new Object();
+		oParam.sInput = strInput;
+		oParam.bCR = bCR;
+		var oMessage = new whMessage(WH_MSG_SEARCHINDEXKEY, this, 1, oParam);
+		SendMessage(oMessage);
+	}
+	if (gbMac) {
+		document.IndexInputForm.keywordField.focus();
+	}
+}
+
+function window_Unload()
+{
+	UnRegisterListener2(this, WH_MSG_SHOWTOC);
+	UnRegisterListener2(this, WH_MSG_SHOWIDX);
+	UnRegisterListener2(this, WH_MSG_SHOWFTS);
+	UnRegisterListener2(this, WH_MSG_SHOWGLO);
+}
+
+function onSendMessage(oMessage)
+{
+	if (oMessage.nMessageId == WH_MSG_SHOWIDX)
+	{
+		document.IndexInputForm.keywordField.focus();
+	}
+	else if (oMessage.nMessageId == WH_MSG_SHOWFTS ||
+		oMessage.nMessageId == WH_MSG_SHOWTOC || 
+		oMessage.nMessageId == WH_MSG_SHOWGLO)
+	{
+		document.IndexInputForm.keywordField.blur();
+	}
+	return true;
+}
+
+if (window.gbWhForm)
+{
+	RegisterListener2(this, WH_MSG_SHOWTOC);
+	RegisterListener2(this, WH_MSG_SHOWIDX);
+	RegisterListener2(this, WH_MSG_SHOWFTS);
+	RegisterListener2(this, WH_MSG_SHOWGLO);
+	window.onunload=window_Unload;
+	window.onload = init;
+	gfunLookUp = indexLookup;
+	gfunInit = null;
+	gstrFormName = "IndexInputForm"
+	gsTitle = "Type in the keyword to find:";
+	gsTitle = "Type in the keyword to find:";
+
+	setBackgroundcolor("White");
+	
+	setBtnType("none");
+	
+	
+	
+	setGoText("Go");
+	setFont("Title", "Tahoma","8pt","Navy","Normal","Normal","none");
+	
+	
+	document.write(getFormHTML());
+	writeFormStyle();
+}
+else
+	document.location.reload();
+//-->
+</script><table class="clsFormBackground" width="100%" cellspacing="0" cellpadding="5" border="0"><form name="IndexInputForm" method="POST" action="javascript:inputSubmit()" style="width:100%"></form><tbody><tr><td><p class="title"><nobr>Type in the keyword to find:</nobr><br><table width="100%"><tbody><tr valign="middle"><td width="100%"><input class="inputfield" name="keywordField" onfocus="inputEnable(1);" onblur="inputEnable(0);" value="business account" type="text"></td></tr></tbody></table></p></td></tr></tbody></table><style type="text/css">p.title {font-family:Tahoma;font-size:8pt;font-style:Normal;font-weight:Normal;text-decoration:none;color:Navy;margin-top:0;margin-bottom:0}
+.inputfield {font-family:Tahoma;font-size:8pt;font-style:Normal;font-weight:Normal;text-decoration:none;color:black;width:100%; }
+A:link {font-family:Arial;font-size:9pt;font-style:normal;font-weight:normal;text-decoration:none;color:#000000;}
+A:visited {font-family:Arial;font-size:9pt;font-style:normal;font-weight:normal;text-decoration:none;color:#000000;}
+A:hover {font-family:Arial;font-size:9pt;font-style:normal;font-weight:normal;text-decoration:underline;color:#000000;}
+.clsFormBackground{
+border-top:black 1px solid;}
+</style>
+
+</body></html>

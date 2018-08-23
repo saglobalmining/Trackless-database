@@ -1,0 +1,64 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title> Navigation Pane </title>
+
+<meta name="generator" content="RoboHelp by eHelp Corporation   www.ehelp.com">
+<meta name="description" content="WebHelp 5.50">
+</head>
+<body border="0" scroll="no" topmargin="0" rightmargin="0" leftmargin="0" bottommargin="0">
+<script language="javascript" src="../../whver.js"></script>
+<script language="javascript1.2" src="whskin_pdhtml_data/whmozemu.js"></script>
+<script language="javascript1.2" src="../../whmsg.js"></script>
+<script language="javascript1.2" src="../whproxy.js"></script>
+<script language="javascript1.2" src="../../whutils.js"></script>
+<script language="javascript1.2" src="whskin_pdhtml_data/whphost.js"></script>
+<script language="javascript1.2">
+<!--
+if (window.gbWhPHost)
+{
+	var gsNavReDirect="whskin_plist.htm";
+	var gbReDirectThis=true;
+	var oMsg = new whMessage(WH_MSG_GETPANES, this, 1, null);
+	if (SendMessage(oMsg))
+	{
+		if (oMsg.oParam)
+		{
+			for (var i=0;i<oMsg.oParam.aPanes.length;i++)
+			{
+				addPane(oMsg.oParam.aPanes[i].sPaneName, oMsg.oParam.aPanes[i].sPaneURL);
+			}
+			setShowPane(oMsg.oParam.sDefault);
+			setServerEnabled();
+		}
+		else
+			writeWebHelpPane();
+	}
+	else
+		writeWebHelpPane();
+}
+else
+	document.location.reload();
+
+if (window.gbNav6)
+{
+	var oMsg=new whMessage(WH_MSG_RELOADNS6,this, 1,null);
+	SendMessage(oMsg);
+}
+
+
+function writeWebHelpPane()
+{
+  var bPreferXML	      = false;
+  var strProjectFileXML =  "whproj.xml";
+  var strProjectFileHTM =  "whproj.htm";	
+  addProject(bPreferXML, strProjectFileXML, strProjectFileHTM);
+  addPane("toc","whtdhtml.htm");
+  addPane("idx","whidhtml.htm");
+  addPane("fts","whfdhtml.htm");
+  setShowPane("toc");
+
+}
+//-->
+</script>
+
+<div id="tocDiv" style="position: absolute; z-index: 1; left: 0px; top: 0px; width: 100%; height: 100%; visibility: hidden;" align="left"><iframe id="tocIFrame" title="toc" src="whskin_pdhtml_data/whtdhtml.htm" border="0" style="width:100%;border:0;height:100%;" frameborder="no"></iframe></div><div id="idxDiv" style="position: absolute; z-index: 1; left: 0px; top: 0px; width: 100%; height: 100%; visibility: visible;" align="left"><iframe id="idxIFrame" title="idx" src="whskin_pdhtml_data/whidhtml.htm" border="0" style="width:100%;border:0;height:100%;" frameborder="no"></iframe></div><div id="ftsDiv" style="position:absolute;z-index:1;left:0;top:0;width:100%;height:100%;visibility:hidden" align="left"></div></body></html>

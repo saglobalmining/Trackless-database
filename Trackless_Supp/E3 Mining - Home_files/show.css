@@ -1,0 +1,15 @@
+.cm-oh-small,
+.cm-pixel-medium .cm-oh-large,
+.cm-pixel-small .cm-oh-large {
+	display: none;
+}
+
+.cm-pixel-medium .cm-oh-small,
+.cm-pixel-small .cm-oh-small {
+  display: inline;
+}
+
+.cm-pixel-medium h3.cm-oh-small,
+.cm-pixel-small h3.cm-oh-small {
+	display: block;
+}
